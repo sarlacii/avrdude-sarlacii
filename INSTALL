@@ -41,7 +41,13 @@ a newer version of `autoconf'.
 
 The simplest way to compile this package is:
 
-  1. `cd' to the directory containing the package's source code and type
+  1. Although point 6 mentions that make maintainer-clean is the BFG
+     clean-up command (which is true) I am using it. You have to install
+     autoconf etc. to use it, but it gives the ability to create makefiles.
+     I have however added a Makefile to the project, which should suit most
+     needs.
+
+  2. `cd' to the directory containing the package's source code and type
      `./configure' to configure the package for your system.  If you're
      using `csh' on an old version of System V, you might need to type
      `sh ./configure' instead to prevent `csh' from trying to execute
@@ -50,15 +56,15 @@ The simplest way to compile this package is:
      Running `configure' takes awhile.  While running, it prints some
      messages telling which features it is checking for.
 
-  2. Type `make' to compile the package.
+  3. Type `make' to compile the package.
 
-  3. Optionally, type `make check' to run any self-tests that come with
+  4. Optionally, type `make check' to run any self-tests that come with
      the package.
 
-  4. Type `make install' to install the programs and any data files and
+  5. Type `make install' to install the programs and any data files and
      documentation.
 
-  5. You can remove the program binaries and object files from the
+  6. You can remove the program binaries and object files from the
      source code directory by typing `make clean'.  To also remove the
      files that `configure' created (so you can compile the package for
      a different kind of computer), type `make distclean'.  There is
