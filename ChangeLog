@@ -1,0 +1,6 @@
+2018-12-07  sarlacii
+
+	* avrdude.conf.in: Added new device Atmel 8510.
+	* avrdude.h: Corrected spelling of communication, line 37.
+	* main.c: Updated copyright, line 684.
+	* configure.ac: Changed release version to 99.3.1. Line 26.
