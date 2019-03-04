@@ -4,3 +4,9 @@
 	* avrdude.h: Corrected spelling of communication, line 37.
 	* main.c: Updated copyright, line 684.
 	* configure.ac: Changed release version to 99.3.1. Line 26.
+
+2019-03-04	sarlacii
+
+	* avrdude.conf.in: Added new device Atmel 8510 changes from Karin. Line 9732.
+	* main.c: Updated copyright to include 2019, line 684.
+	* configure.ac: Changed release version to 99.3.2. Line 26.
