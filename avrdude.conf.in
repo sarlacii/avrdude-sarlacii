@@ -36,7 +36,7 @@
 #       vfyled   = <num> ;                          # pin number
 #       usbvid   = <hexnum>;                        # USB VID (Vendor ID)
 #       usbpid   = <hexnum> [, <hexnum> ...]        # USB PID (Product ID) (1)
-#       usbdev   = <interface>;                     # USB interface or other device info
+#       usbdev   = <interface>;                     # USB interface or other device info 
 #       usbvendor = <vendorname>;                   # USB Vendor Name
 #       usbproduct = <productname>;                 # USB Product Name
 #       usbsn    = <serialno>;                      # USB Serial Number
@@ -147,9 +147,9 @@
 # complain.
 #
 # Parts can also inherit parameters from previously defined parts
-# using the following syntax. In this case specified integer and
-# string values override parameter values from the parent part. New
-# memory definitions are added to the definitions inherited from the
+# using the following syntax. In this case specified integer and 
+# string values override parameter values from the parent part. New 
+# memory definitions are added to the definitions inherited from the 
 # parent.
 #
 #   part parent <id>                              # quoted string
@@ -158,7 +158,7 @@
 #     ;
 #
 # NOTES:
-#   * 'devicecode' is the device code used by the STK500 (see codes
+#   * 'devicecode' is the device code used by the STK500 (see codes 
 #       listed below)
 #   * Not all memory types will implement all instructions.
 #   * AVR Fuse bits and Lock bits are implemented as a type of memory.
@@ -372,7 +372,7 @@ programmer
 # http://dangerousprototypes.com/docs/FT2232_breakout_board
 # http://www.ftdichip.com/Products/Modules/DLPModules.htm,DLP-2232*,DLP-USB1232H
 # http://flashrom.org/FT2232SPI_Programmer
-#
+# 
 # The drivers will look for a specific device and use the first one found.
 # If you have mulitple devices, then look for unique information (like SN)
 # And fill that in here.
@@ -414,7 +414,7 @@ programmer
   type       = "avrftdi";
   connection_type = usb;
   usbvid     = 0x0403;
-# Note: This PID is reserved for generic H devices and
+# Note: This PID is reserved for generic H devices and 
 # should be programmed into the EEPROM
 #  usbpid     = 0x8A48;
   usbpid     = 0x6010;
@@ -422,13 +422,13 @@ programmer
   usbvendor  = "";
   usbproduct = "";
   usbsn      = "";
-#ISP-signals
+#ISP-signals 
   reset  = 3;
   sck    = 0;
   mosi   = 1;
   miso   = 2;
   buff   = ~4;
-#LED SIGNALs
+#LED SIGNALs 
   errled = ~ 11;
   rdyled = ~ 14;
   pgmled = ~ 13;
@@ -474,19 +474,19 @@ programmer
 # J2: Pin 7 is SCK
 #   : Pin 8 is MOSI
 #   : Pin 9 is MISO
-#	: Pin 11 is RST
+#   : Pin 11 is RST
 #   : Pin 6 is ground
 # Use the -b flag to set the SPI clock rate eg -b 3750000 is the fastest I could get
 # a 16MHz Atmega1280 to program reliably.  The 232H is conveniently 5V tolerant.
 programmer
-  id	= "UM232H";
-  desc	= "FT232H based module from FTDI and Glyn.com.au";
-  type	= "avrftdi";
+  id         = "UM232H";
+  desc       = "FT232H based module from FTDI and Glyn.com.au";
+  type       = "avrftdi";
   usbvid     = 0x0403;
 # Note: This PID is reserved for generic 232H devices and
 # should be programmed into the EEPROM
-   usbpid    = 0x6014;
-  usbdev = "A";
+  usbpid     = 0x6014;
+  usbdev     = "A";
   usbvendor  = "";
   usbproduct = "";
   usbsn      = "";
@@ -506,14 +506,14 @@ programmer
 # Use the -b flag to set the SPI clock rate eg -b 3750000 is the fastest I could get
 # a 16MHz Atmega1280 to program reliably.  The 232H is conveniently 5V tolerant.
 programmer
-  id	= "C232HM";
-  desc	= "FT232H based module from FTDI and Glyn.com.au";
-  type	= "avrftdi";
+  id         = "C232HM";
+  desc       = "FT232H based module from FTDI and Glyn.com.au";
+  type       = "avrftdi";
   usbvid     = 0x0403;
 # Note: This PID is reserved for generic 232H devices and
 # should be programmed into the EEPROM
-   usbpid    = 0x6014;
-  usbdev = "A";
+  usbpid     = 0x6014;
+  usbdev     = "A";
   usbvendor  = "";
   usbproduct = "";
   usbsn      = "";
@@ -526,8 +526,8 @@ programmer
 
 
 # On the adapter you can read "O-Link". On the PCB is printed "OpenJTAG v3.1"
-# You can find it as "OpenJTAG ARM JTAG USB" in the internet.
-# (But there are also several projects called Open JTAG, eg.
+# You can find it as "OpenJTAG ARM JTAG USB" in the internet. 
+# (But there are also several projects called Open JTAG, eg. 
 # http://www.openjtag.org, which are completely different.)
 #   http://www.100ask.net/shop/english.html (website seems to be outdated)
 #   http://item.taobao.com/item.htm?id=1559277013
@@ -805,7 +805,7 @@ programmer
 # TTL-232R TXD 4 Orange -> ICPS RESET (pin 5)
 # TTL-232R RXD 5 Yellow -> ICPS SCK   (pin 3)
 # TTL-232R RTS 6 Green  -> ICPS MISO  (pin 1)
-# Except for VCC and GND, you can connect arbitual pairs as long as
+# Except for VCC and GND, you can connect arbitual pairs as long as 
 # the following table is adjusted.
 programmer
   id    = "ttl232r";
@@ -875,6 +875,24 @@ programmer
 ;
 
 programmer
+  id    = "arduinoisp";
+  desc  = "Arduino ISP Programmer";
+  type  = "usbtiny";
+  connection_type = usb;
+  usbvid     = 0x2341;
+  usbpid     = 0x0049;
+;
+
+programmer
+  id    = "arduinoisporg";
+  desc  = "Arduino ISP Programmer";
+  type  = "usbtiny";
+  connection_type = usb;
+  usbvid     = 0x2A03;
+  usbpid     = 0x0049;
+;
+
+programmer
   id    = "butterfly";
   desc  = "Atmel Butterfly Development Board";
   type  = "butterfly";
@@ -894,7 +912,7 @@ programmer
   type  = "butterfly";
   connection_type = serial;
 ;
-
+ 
 # suggested in http://forum.mikrokopter.de/topic-post48317.html
 programmer
   id    = "mkbutterfly";
@@ -1206,7 +1224,7 @@ programmer
 programmer parent "stk200"
   id    = "pony-stk200";
   desc  = "Pony Prog STK200";
-  pgmled = 8;
+  pgmled = 8; 
 ;
 
 programmer
@@ -1291,7 +1309,7 @@ programmer
 # From the contributor of the "xil" jtag cable:
 # The "vcc" definition isn't really vcc (the cable gets its power from
 # the programming circuit) but is necessary to switch one of the
-# buffer lines (trying to add it to the "buff" lines doesn't work in
+# buffer lines (trying to add it to the "buff" lines doesn't work in 
 # avrdude versions before 5.5j).
 # With this, TMS connects to RESET, TDI to MOSI, TDO to MISO and TCK
 # to SCK (plus vcc/gnd of course)
@@ -1401,7 +1419,7 @@ programmer
 #  miso  = ?;
 #;
 
-# some ultra cheap programmers use bitbanging on the
+# some ultra cheap programmers use bitbanging on the 
 # serialport.
 #
 # PC - DB9 - Pins for RS232:
@@ -2051,7 +2069,7 @@ part
         max_write_delay = 9000;
         readback_p1     = 0x00;
         readback_p2     = 0xff;
-        read            = "1 0  1  0   0  0  0  0   x x x x  x x x x",
+        read            = "1 0  1  0   0  0  0  0   x x x x  x x x x", 
                           "x x a5 a4  a3 a2 a1 a0   o o o o  o o o o";
 
         write           = "1 1  0  0   0  0  0  0   x x x x  x x x x",
@@ -2164,7 +2182,7 @@ part
         max_write_delay = 20000;
         readback_p1     = 0x80;
         readback_p2     = 0x7f;
-        read            = " 1  0  1  0   0  0  0  0  x x x x  x x x a8",
+        read            = " 1  0  1  0   0  0  0  0  x x x x  x x x a8", 
                           "a7 a6 a5 a4 a3 a2 a1 a0   o o o o  o o o o";
 
         write           = " 1  1  0  0   0  0  0  0   x x x x  x x x a8",
@@ -2277,7 +2295,7 @@ part
         max_write_delay = 9000;
         readback_p1     = 0x80;
         readback_p2     = 0x7f;
-        read            = "1  0  1  0   0  0  0  0   x x x x  x x x x",
+        read            = "1  0  1  0   0  0  0  0   x x x x  x x x x", 
                           "x a6 a5 a4  a3 a2 a1 a0   o o o o  o o o o";
 
         write           = "1  1  0  0   0  0  0  0   x x x x  x x x x",
@@ -2391,7 +2409,7 @@ part
         max_write_delay = 20000;
         readback_p1     = 0x00;
         readback_p2     = 0xff;
-        read            = "1  0  1  0   0  0  0  0   x x x x  x x x x",
+        read            = "1  0  1  0   0  0  0  0   x x x x  x x x x", 
                           "x a6 a5 a4  a3 a2 a1 a0   o o o o  o o o o";
 
         write           = "1  1  0  0   0  0  0  0   x x x x  x x x x",
@@ -2518,7 +2536,7 @@ part
         max_write_delay = 20000;
         readback_p1     = 0x00;
         readback_p2     = 0xff;
-        read            = "1  0  1  0   0  0  0  0   0 0 0 0  0 0 0 0",
+        read            = "1  0  1  0   0  0  0  0   0 0 0 0  0 0 0 0", 
                           "x a6 a5 a4  a3 a2 a1 a0   o o o o  o o o o";
 
         write           = "1  1  0  0   0  0  0  0   0 0 0 0  0 0 0 0",
@@ -2642,7 +2660,7 @@ part
         max_write_delay = 20000;
         readback_p1     = 0x00;
         readback_p2     = 0xff;
-        read            = " 1  0  1  0   0  0  0  0   x x x x  x x x x",
+        read            = " 1  0  1  0   0  0  0  0   x x x x  x x x x", 
                           "a7 a6 a5 a4  a3 a2 a1 a0   o o o o  o o o o";
 
         write           = " 1  1  0  0   0  0  0  0   x x x x  x x x x",
@@ -2736,7 +2754,7 @@ part
         max_write_delay = 20000;
         readback_p1     = 0x00;
         readback_p2     = 0xff;
-        read            = " 1  0  1  0   0  0  0  0   x x x x  x x x x",
+        read            = " 1  0  1  0   0  0  0  0   x x x x  x x x x", 
                           "a7 a6 a5 a4  a3 a2 a1 a0   o o o o  o o o o";
 
         write           = " 1  1  0  0   0  0  0  0   x x x x  x x x x",
@@ -2850,7 +2868,7 @@ part
         max_write_delay = 9000;
         readback_p1     = 0x80;
         readback_p2     = 0x7f;
-        read            = " 1  0  1  0   0  0  0  0  x x x x  x x x a8",
+        read            = " 1  0  1  0   0  0  0  0  x x x x  x x x a8", 
                           "a7 a6 a5 a4 a3 a2 a1 a0   o o o o  o o o o";
 
         write           = " 1  1  0  0   0  0  0  0   x x x x  x x x a8",
@@ -2963,7 +2981,7 @@ part
         max_write_delay = 20000;
         readback_p1     = 0x00;
         readback_p2     = 0xff;
-        read            = " 1  0  1  0   0  0  0  0   x x x x  x x x a8",
+        read            = " 1  0  1  0   0  0  0  0   x x x x  x x x a8", 
                           "a7 a6 a5 a4  a3 a2 a1 a0   o o o o  o o o o";
 
         write           = " 1  1  0  0   0  0  0  0   x x x x  x x x a8",
@@ -3091,7 +3109,7 @@ part
 
 	write           = "  1   1   0   0      0   0   0   0",
                           "  x   x   x   x    a11 a10  a9  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	mode		= 0x04;
@@ -3243,7 +3261,7 @@ part
 
         write           = "  1   1   0   0      0   0   0   0",
                           "  x   x   x   x    a11 a10  a9  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	mode		= 0x04;
@@ -3427,7 +3445,7 @@ part
 
         write           = "  1   1   0   0      0   0   0   0",
                           "  x   x   x   x    a11 a10  a9  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	mode		= 0x04;
@@ -3608,7 +3626,7 @@ part
 
 	write           = "  1   1   0   0      0   0   0   0",
                           "  0   0   0   x    a11 a10  a9  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	loadpage_lo	= "  1   1   0   0      0   0   0   1",
@@ -4183,7 +4201,7 @@ part
 
 	write           = "  1   1   0   0      0   0   0   0",
                           "  0   0   x   x      x   x  a9  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	loadpage_lo	= "  1   1   0   0      0   0   0   1",
@@ -4385,7 +4403,7 @@ part
 
 	write           = "  1   1   0   0      0   0   0   0",
                           "  0   0   x   x      x a10  a9  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	loadpage_lo	= "  1   1   0   0      0   0   0   1",
@@ -4593,7 +4611,7 @@ part
 
 	write           = "  1   1   0   0      0   0   0   0",
                           "  0   0   x   x    a11 a10  a9  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	loadpage_lo	= "  1   1   0   0      0   0   0   1",
@@ -4801,7 +4819,7 @@ part
 
 	write           = "  1   1   0   0      0   0   0   0",
                           "  0   0   x   x    a11 a10  a9  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	loadpage_lo	= "  1   1   0   0      0   0   0   1",
@@ -4995,7 +5013,7 @@ part
 
 	write           = "  1   1   0   0      0   0   0   0",
                           "  0   0   x   x    a11 a10  a9  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	loadpage_lo	= "  1   1   0   0      0   0   0   1",
@@ -5179,7 +5197,7 @@ part
        mode        = 0x41;
     delay       = 10;
     blocksize   = 128;
-    readsize    = 256;
+    readsize    = 256;  
 
         ;
 
@@ -5539,7 +5557,7 @@ part
 
 	write           = "  1   1   0   0      0   0   0   0",
                           "  x   x   x   x      x   x   x  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	loadpage_lo	= "  1   1   0   0      0   0   0   1",
@@ -6460,7 +6478,7 @@ part
 
 	write           = "  1   1   0   0      0   0   0   0",
                           "  0   0   x   x      x   x   x  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	mode		= 0x04;
@@ -6528,6 +6546,13 @@ part
 
         write           = "1 0 1 0  1 1 0 0   1 0 1 0  1 0 0 0",
                           "x x x x  x x x x   i i i i  i i i i";
+      ;
+
+    # Required for Arduino IDE
+    # see: https://github.com/arduino/Arduino/issues/2075
+    #      https://github.com/arduino/Arduino/issues/2075#issuecomment-238031689
+    memory "efuse"
+        size            = 0;
       ;
 
     memory "lock"
@@ -7734,7 +7759,7 @@ part
 
 	write           = "  1   1   0   0      0   0   0   0",
                           "  0   0   0   x      x   x   x   x",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	loadpage_lo	= "  1   1   0   0      0   0   0   1",
@@ -7946,7 +7971,7 @@ part
 
 	write           = "  1   1   0   0      0   0   0   0",
                           "  0   0   0   x      x   x   x  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	loadpage_lo	= "  1   1   0   0      0   0   0   1",
@@ -8155,7 +8180,7 @@ part
                           " 0 0 0 x x x x a8",
                           " a7 a6 a5 a4 a3 a2 a1 a0",
                           " o o o o o o o o";
-
+    
         write           = " 1 1 0 0 0 0 0 0",
                           " 0 0 0 x x x x a8",
                           " a7 a6 a5 a4 a3 a2 a1 a0",
@@ -8190,22 +8215,22 @@ part
                           " 0 0 0 a12 a11 a10 a9 a8",
                           " a7 a6 a5 a4 a3 a2 a1 a0",
                           " o o o o o o o o";
-
+        
         read_hi          = " 0 0 1 0 1 0 0 0",
                            " 0 0 0 a12 a11 a10 a9 a8",
                            " a7 a6 a5 a4 a3 a2 a1 a0",
                            " o o o o o o o o";
-
+        
         loadpage_lo     = " 0 1 0 0 0 0 0 0",
                           " 0 0 0 x x x x x",
                           " x x a5 a4 a3 a2 a1 a0",
                           " i i i i i i i i";
-
+        
         loadpage_hi     = " 0 1 0 0 1 0 0 0",
                           " 0 0 0 x x x x x",
                           " x x a5 a4 a3 a2 a1 a0",
                           " i i i i i i i i";
-
+        
         writepage       = " 0 1 0 0 1 1 0 0",
                           " 0 0 0 a12 a11 a10 a9 a8",
                           " a7 a6 x x x x x x",
@@ -8217,57 +8242,57 @@ part
         readsize    = 256;
 
         ;
-
+        
     memory "lfuse"
         size            = 1;
         min_write_delay = 4500;
         max_write_delay = 4500;
         read            = "0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0",
                           "x x x x x x x x o o o o o o o o";
-
+        
         write           = "1 0 1 0 1 1 0 0 1 0 1 0 0 0 0 0",
                           "x x x x x x x x i i i i i i i i";
         ;
-
+    
     memory "hfuse"
         size            = 1;
         min_write_delay = 4500;
         max_write_delay = 4500;
         read            = "0 1 0 1 1 0 0 0 0 0 0 0 1 0 0 0",
                           "x x x x x x x x o o o o o o o o";
-
+        
         write           = "1 0 1 0 1 1 0 0 1 0 1 0 1 0 0 0",
                           "x x x x x x x x i i i i i i i i";
         ;
-
+    
     memory "efuse"
         size            = 1;
         min_write_delay = 4500;
         max_write_delay = 4500;
         read            = "0 1 0 1 0 0 0 0 0 0 0 0 1 0 0 0",
                           "x x x x x x x x o o o o o o o o";
-
+        
         write           = "1 0 1 0 1 1 0 0 1 0 1 0 0 1 0 0",
                           "x x x x x x x x x x x x x i i i";
         ;
-
+    
     memory "lock"
         size            = 1;
         min_write_delay = 4500;
         max_write_delay = 4500;
         read            = "0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0",
                           "x x x x x x x x x x o o o o o o";
-
+        
         write           = "1 0 1 0 1 1 0 0 1 1 1 x x x x x",
                           "x x x x x x x x 1 1 i i i i i i";
         ;
-
+    
     memory "calibration"
         size            = 1;
         read            = "0 0 1 1 1 0 0 0 0 0 0 x x x x x",
                           "0 0 0 0 0 0 0 0 o o o o o o o o";
         ;
-
+    
     memory "signature"
         size            = 3;
         read            = "0 0 1 1 0 0 0 0 0 0 0 x x x x x",
@@ -9359,7 +9384,7 @@ part parent "pwm3b"
 part parent "pwm316"
      id = "pwm216";
      desc = "AT90PWM216";
-  ;
+  ; 
 
 #------------------------------------------------------------
 # ATtiny25
@@ -9841,7 +9866,7 @@ part parent "t45"
 	blocksize	= 32;
 	readsize	= 256;
        ;
-#   ATtiny45 has Signature Bytes: 0x1E 0x92 0x08. (Data sheet 2586C-AVR-06/05 (doc2586.pdf) indicates otherwise!)
+#  SOJRH - V99.4.0 - 20200922: ATA8510 has Signature Bytes: 0x1E 0x95 0x61.
      memory "signature"
          size            = 3;
          read            = "0  0  1  1   0  0  0  0   0  0  0  x   x  x  x  x",
@@ -9916,7 +9941,7 @@ part
      avr910_devcode   = 0x20;
      signature        = 0x1e 0x93 0x0b;
      reset            = io;
-     chip_erase_delay = 4500;
+     chip_erase_delay = 400000;
 
      pgm_enable       = "1 0 1 0  1 1 0 0    0 1 0 1  0 0 1 1",
                         "x x x x  x x x x    x x x x  x x x x";
@@ -9982,7 +10007,7 @@ part
 			  "  x   x   x   x      x   x   x   x";
 
 	mode		= 0x41;
-	delay		= 6;
+	delay		= 12;
 	blocksize	= 4;
 	readsize	= 256;
        ;
@@ -9991,8 +10016,8 @@ part
          size            = 8192;
          page_size       = 64;
          num_pages       = 128;
-         min_write_delay = 4500;
-         max_write_delay = 4500;
+         min_write_delay = 30000;
+         max_write_delay = 30000;
          readback_p1     = 0xff;
          readback_p2     = 0xff;
          read_lo         = "  0   0   1   0    0   0   0   0",
@@ -10156,7 +10181,7 @@ part
 
         write           = "  1   1   0   0      0   0   0   0",
                           "  x   x   x   x    a11 a10  a9  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	loadpage_lo	= "  1   1   0   0      0   0   0   1",
@@ -10346,7 +10371,7 @@ part
 
         write           = "  1   1   0   0      0   0   0   0",
                           "  x   x   x   x    a11 a10  a9  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	loadpage_lo	= "  1   1   0   0      0   0   0   1",
@@ -10549,7 +10574,7 @@ part
 
         write           = "  1   1   0   0      0   0   0   0",
                           "  x   x   x   x    a11 a10  a9  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	loadpage_lo	= "  1   1   0   0      0   0   0   1",
@@ -11725,7 +11750,7 @@ part
 
         write           = "  1   1   0   0      0   0   0   0",
                           "  x   x   x   x      x a10  a9  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	loadpage_lo	= "  1   1   0   0      0   0   0   1",
@@ -11916,7 +11941,7 @@ part
 
         write           = "  1   1   0   0      0   0   0   0",
                           "  x   x   x   x      x a10  a9  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	loadpage_lo	= "  1   1   0   0      0   0   0   1",
@@ -12120,7 +12145,7 @@ part
 
         write           = "  1   1   0   0      0   0   0   0",
                           "  x   x   x   x    a11 a10  a9  a8",
-                          " a7  a6  a5  a4     a3  a2  a1  a0",
+                          " a7  a6  a5  a4     a3  a2  a1  a0", 
                           "  i   i   i   i      i   i   i   i";
 
 	loadpage_lo	= "  1   1   0   0      0   0   0   1",

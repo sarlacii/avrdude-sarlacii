@@ -29,12 +29,15 @@
 #include <stdint.h>
 
 #ifdef HAVE_LIBELF
-#ifdef HAVE_LIBELF_H
-#include <libelf.h>
-#elif defined(HAVE_LIBELF_LIBELF_H)
-#include <libelf/libelf.h>
-#endif
-#define EM_AVR32 0x18ad         /* inofficial */
+	#ifdef HAVE_LIBELF_H
+		#include <libelf.h>
+	#elif defined(HAVE_LIBELF_LIBELF_H)
+		#include <libelf/libelf.h>
+	#endif
+	#ifndef EM_AVR32	// warning: "EM_AVR32" redefined: fileio.c:37 vs /usr/include/elf.h:323
+		//#undef EM_AVR32
+		#define EM_AVR32 0x18ad         /* inofficial */
+	#endif
 #endif
 
 #include "avrdude.h"
