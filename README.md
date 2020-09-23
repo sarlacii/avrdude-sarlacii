@@ -13,7 +13,8 @@ If there is nothing to do, this command fails. Ignore in that case and carry on.
 Then reconfigure and make the project:
 
     autoreconf --install
-    ./configure --enable-linuxgpio --disable-parport
+    # Configure defaults set --enable-linuxgpio --disable-parport
+    ./configure
     make
     make install
 
