@@ -44,6 +44,8 @@ After the ./configure script runs, you should see:
     zypper install gcc bison flex make automake autoconf
     zypper install binutils binutils-devel
     zypper install elfutils
+    # Optional for make distcheck
+    zypper install makeinfo
 
 ## Device notes:
 
