@@ -22,10 +22,10 @@ After the ./configure script runs, you should see:
     Configuration summary:
     ----------------------
     DO HAVE    libelf
-    DO HAVE    libusb
-    DO HAVE    libusb_1_0
-    DO HAVE    libftdi1
-    DON'T HAVE libftdi
+    DO HAVE    libusb       --> You may only have the older 0.1 version USB libs. That's fine.
+    DO HAVE    libusb_1_0   --> In this example both are present
+    DO HAVE    libftdi1     --> If you DON'T HAVE libftdi1, then make sure you DO HAVE libftdi
+    DON'T HAVE libftdi      --> likewise with libftdi... .
     DON'T HAVE libhid
     DO HAVE    pthread
     DISABLED   doc
