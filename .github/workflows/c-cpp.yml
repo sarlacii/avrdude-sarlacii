@@ -40,3 +40,7 @@ jobs:
 # an implementation detail, which can change at any time; so do not rely on it. 
     - name: make distcheck
       run: make distcheck
+# Finally, clean up all the build files, not just "make distclean"
+    - name: make maintainer-clean
+      run: make maintainer-clean
+    
