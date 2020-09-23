@@ -15,7 +15,8 @@ jobs:
     - name: Autoconf
       run: autoreconf --install
     - name: configure
-      run: ./configure --enable-linuxgpio --disable-parport
+#      run: ./configure --enable-linuxgpio --disable-parport - no longer required - changed defaults
+      run: ./configure
     - name: make
       run: make
 #    - name: make check
