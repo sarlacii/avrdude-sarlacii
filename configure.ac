@@ -287,7 +287,7 @@ AC_ARG_ENABLE(
 		no)  enabled_parport=no ;;
 		*)   AC_MSG_ERROR(bad value ${enableval} for enable-parport option) ;;
 		esac],
-	[enabled_parport=yes])
+	[enabled_parport=no])
 	
 AC_ARG_ENABLE(
 	[linuxgpio],
@@ -299,7 +299,7 @@ AC_ARG_ENABLE(
 		no)  enabled_linuxgpio=no ;;
 		*)   AC_MSG_ERROR(bad value ${enableval} for enable-linuxgpio option) ;;
 		esac],
-	[enabled_linuxgpio=no])	
+	[enabled_linuxgpio=yes])	
 
 DIST_SUBDIRS_AC='doc windows'
 
