@@ -53,3 +53,6 @@ After the ./configure script runs, you should see:
 
 The default bit clock period for avrdude results in unstable programming of the device flash/eeprom. Programming also takes a very long time, with non-obvious errors. So make sure to program with the "-B" option. A value of 125kHz is recommended, same as the Atmel Studio default: i.e. "-B 125kHz". The suffix "kHz" will cause avrdude to set the bit clock period from the specified frequency, as opposed to the default which is an integer bit clock period in micro-seconds (us).
 
+### SAMD20-J18 / SAM4S8B:
+
+Added additional device signatures for later versions of silicon.
