@@ -10,3 +10,12 @@
 	* avrdude.conf.in: Added new device Atmel 8510 changes from Karin. Line 9732.
 	* main.c: Updated copyright to include 2019, line 684.
 	* configure.ac: Changed release version to 99.3.2. Line 26.
+
+2021-05-12	sarlacii
+
+	* avrdude.conf.in: Added new device Atmel ATmega164A (Device signature = 0x1e940f)
+	changes from Karin. Line 4331.
+	* main.c: Updated copyright to include 2021, line 685.
+	* configure.ac: Changed release version to 99.4.1. Line 26.
+	* ChangeLog: 99.4.0 - historical change to fix AT8510 device signature
+	99.4.1 - added new device for Karin - ATmega164A
