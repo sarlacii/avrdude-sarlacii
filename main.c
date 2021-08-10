@@ -683,7 +683,7 @@ int main(int argc, char * argv [])
                     "%sCopyright (c) 2000-2005 Brian Dean, http://www.bdmicro.com/\n"
                     "%sCopyright (c) 2007-2014 Joerg Wunsch\n"
 						  "%sCopyright (c) 2014-2021 n/a - github community\n\n",
-						progname, version, __DATE__, __TIME__, progbuf, progbuf, progbuf);
+                    progname, version, __DATE__, __TIME__, progbuf, progbuf);
   avrdude_message(MSG_NOTICE, "%sSystem wide configuration file is \"%s\"\n",
             progbuf, sys_config);
 

@@ -19,10 +19,3 @@
 	* configure.ac: Changed release version to 99.4.1. Line 26.
 	* ChangeLog: 99.4.0 - historical change to fix AT8510 device signature
 	99.4.1 - added new device for Karin - ATmega164A
-
-2021-08-05	sarlacii
-
-	* avrdude.conf.in: Added new device Atmel ATmega3208/3209 (Device signature = 0x1e9530/0x1e9531)
-	changes for Kieran. Line 8753.
-	* configure.ac: Changed release version to 99.4.2. Line 26.
-	* ChangeLog: 99.4.2 - new device signature for ATmega3208/3209
