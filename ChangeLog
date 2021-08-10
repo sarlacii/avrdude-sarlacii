@@ -26,3 +26,11 @@
 	changes for Kieran. Line 8753.
 	* configure.ac: Changed release version to 99.4.2. Line 26.
 	* ChangeLog: 99.4.2 - new device signature for ATmega3208/3209
+
+2021-08-06	sarlacii
+
+	* avrdude.conf.in: Added all MegaX core devices, to correct timings for ATmega3208 above.
+	All changes added to the end of the file.
+	See: /usr/local/src/arduino-1.8.10/hardware/tools/avr/etc/avrdude.conf
+	* configure.ac: Changed release version to 99.4.3. Line 26.
+	* ChangeLog: 99.4.3 - Corrected addition for ATmega3208, but adding MegaX cores.

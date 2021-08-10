@@ -4,14 +4,65 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "usr/local/include/",
-                "usr/include/"
+                "/usr/local/include/",
+                "/usr/include/",
+                "${default}"
             ],
-            "defines": [],
-            "compilerPath": "/usr/bin/X11/gcc",
+            "defines": [
+                "${default}"
+            ],
+            "macFrameworkPath": [
+                "${default}"//,
+                //"additional/paths"
+            ],
+            "forcedInclude": [
+                "${default}"//,
+                //"additional/paths"
+            ],
+            "compileCommands": "${default}",
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${default}",
+                "path": [
+                    "${default}"//,
+                    //"additional/paths"
+                ]
+            },
+            "intelliSenseMode": "clang-x64",
             "cStandard": "c11",
             "cppStandard": "c++14",
-            "intelliSenseMode": "clang-x64"
+            "compilerPath": "/usr/bin/gcc"
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                //"additional/paths",
+                "${default}"
+            ],
+            "defines": [
+                "${default}"
+            ],
+            "macFrameworkPath": [
+                "${default}"//,
+                //"additional/paths"
+            ],
+            "forcedInclude": [
+                "${default}"//,
+                //"additional/paths"
+            ],
+            "compileCommands": "${default}",
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${default}",
+                "path": [
+                    "${default}"//,
+                    //"additional/paths"
+                ]
+            },
+            "intelliSenseMode": "${default}",
+            "cStandard": "${default}",
+            "cppStandard": "${default}",
+            "compilerPath": "${default}"
         }
     ],
     "version": 4

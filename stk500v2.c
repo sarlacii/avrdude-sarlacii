@@ -3867,6 +3867,13 @@ static int stk600_xprog_write_byte(PROGRAMMER * pgm, AVRPART * p, AVRMEM * mem,
                         progname, mem->desc);
         return -1;
     }
+
+    //SOJRH - 20210806
+    // See "https://www.avrfreaks.net/forum/avrdude-pdi-programming".
+    // See "https://github.com/arduino/Arduino/issues/2986"
+    //usleep(100000);
+    //EOJRH - 20210806
+
     addr += mem->offset;
 
     if (need_erase) {
@@ -3941,6 +3948,13 @@ static int stk600_xprog_read_byte(PROGRAMMER * pgm, AVRPART * p, AVRMEM * mem,
                         progname, mem->desc);
         return -1;
     }
+
+    //SOJRH - 20210806
+    // See "https://www.avrfreaks.net/forum/avrdude-pdi-programming".
+    // See "https://github.com/arduino/Arduino/issues/2986"
+	  //usleep(100000);
+    //EOJRH - 20210806
+
     addr += mem->offset;
 
     b[0] = XPRG_CMD_READ_MEM;
