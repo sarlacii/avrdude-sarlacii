@@ -4,65 +4,14 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/local/include/",
-                "/usr/include/",
-                "${default}"
+                "usr/local/include/",
+                "usr/include/"
             ],
-            "defines": [
-                "${default}"
-            ],
-            "macFrameworkPath": [
-                "${default}"//,
-                //"additional/paths"
-            ],
-            "forcedInclude": [
-                "${default}"//,
-                //"additional/paths"
-            ],
-            "compileCommands": "${default}",
-            "browse": {
-                "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": "${default}",
-                "path": [
-                    "${default}"//,
-                    //"additional/paths"
-                ]
-            },
-            "intelliSenseMode": "clang-x64",
+            "defines": [],
+            "compilerPath": "/usr/bin/X11/gcc",
             "cStandard": "c11",
             "cppStandard": "c++14",
-            "compilerPath": "/usr/bin/gcc"
-        },
-        {
-            "name": "Win32",
-            "includePath": [
-                //"additional/paths",
-                "${default}"
-            ],
-            "defines": [
-                "${default}"
-            ],
-            "macFrameworkPath": [
-                "${default}"//,
-                //"additional/paths"
-            ],
-            "forcedInclude": [
-                "${default}"//,
-                //"additional/paths"
-            ],
-            "compileCommands": "${default}",
-            "browse": {
-                "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": "${default}",
-                "path": [
-                    "${default}"//,
-                    //"additional/paths"
-                ]
-            },
-            "intelliSenseMode": "${default}",
-            "cStandard": "${default}",
-            "cppStandard": "${default}",
-            "compilerPath": "${default}"
+            "intelliSenseMode": "clang-x64"
         }
     ],
     "version": 4
